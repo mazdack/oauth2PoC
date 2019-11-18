@@ -1,10 +1,17 @@
-security:
-  oauth2:
-    keycloak-client:
-      grantType: password
-      clientId: zv-inventory-tu
-      clientSecret: b06d28ab-989e-4cd7-8d0c-b781d0e6d106
-      accessTokenUri: https://auth.marketplace.syncier.rocks/auth/realms/syncier-motor-registration/protocol/openid-connect/token
-      clientAuthenticationScheme: header
-      username: zv-inventory-test
-      password: bwPCqSxqZJtqkCm9q3S2DHjNWzZbAse6
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            tokenUri: https://auth.marketplace.syncier.rocks/auth/realms/syncier-motor-registration/protocol/openid-connect/token
+        registration:
+          keycloak-client:
+            grantType: password
+            clientId: zv-inventory-tu
+            clientSecret: b06d28ab-989e-4cd7-8d0c-b781d0e6d106
+            clientAuthenticationScheme: header
+            username: zv-inventory-test
+            password: bwPCqSxqZJtqkCm9q3S2DHjNWzZbAse6
+            provider: keycloak
+            authorizationGrantType: password
